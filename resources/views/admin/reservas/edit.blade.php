@@ -1,0 +1,67 @@
+@extends('layouts.app')
+
+@section('content')
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+    <div class="container py-5">
+        <h2>Edit Reservasi {{ $reserva->nome_cliente }}</h2>
+
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
+
+        <form method="POST" action="{{ route('admin.reservas.update', $reserva->id) }}">
+            @csrf
+            @method('PUT')
+
+            <div class="mb-3">
+                <label class="form-label">Tanggal Mulai</label>
+                <input type="date" name="data_inicio" class="form-control" value="{{ $reserva->data_inicio }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Tanggal Berakhir</label>
+                <input type="date" name="data_fim" class="form-control" value="{{ $reserva->data_fim }}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Metode Pembayaran</label>
+                <select name="payment_method" class="form-select" required disabled>
+                    <option value="paypal" {{ $reserva->payment_method === 'paypal' ? 'selected' : '' }}>PayPal</option>
+                    <option value="atm" {{ $reserva->payment_method === 'atm' ? 'selected' : '' }}>Multibank</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Status Pembayaran</label>
+                <select name="payment_status" class="form-select" required>
+                    <option value="paid" {{ $reserva->payment_status === 'paid' ? 'selected' : '' }}>Dibayar</option>
+                    <option value="pending" {{ $reserva->payment_status === 'pending' ? 'selected' : '' }}>Pending</option>
+                    <option value="refunded" {{ $reserva->payment_status === 'refunded' ? 'selected' : '' }}>Refund
+                    </option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn" style="background-color:gold; color:black;">Simpan Perubahan</button>
+        </form>
+
+        @if ($reserva->payment_status === 'paid')
+            <form method="POST" action="{{ route('admin.reservas.refund', $reserva->id) }}" class="mt-3">
+                @csrf
+                <button class="btn" style="background-color:gold; color:black;"
+                    onclick="return confirm('Tem certeza que deseja reembolsar esta reserva?')">Pengembalian Dana
+Pembayaran</button>
+            </form>
+        @endif
+    </div>
+@endsection
+
+<footer class="fixed bottom-0 left-0 w-full text-center py-4 bg-dark-custom text-white">
+        &copy; {{ date('Y') }} Dinkes Kampar. All rights reserved.
+    </footer>
