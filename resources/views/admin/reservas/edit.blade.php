@@ -31,17 +31,17 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Metode Pembayaran</label>
+                <label class="form-label">Metode Reservasi</label>
                 <select name="payment_method" class="form-select" required disabled>
                     <option value="paypal" {{ $reserva->payment_method === 'paypal' ? 'selected' : '' }}>PayPal</option>
-                    <option value="atm" {{ $reserva->payment_method === 'atm' ? 'selected' : '' }}>Multibank</option>
+                    <option value="atm" {{ $reserva->payment_method === 'atm' ? 'selected' : '' }}>Kuitansi BBM</option>
                 </select>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Status Pembayaran</label>
+                <label class="form-label">Status Reservasi</label>
                 <select name="payment_status" class="form-select" required>
-                    <option value="paid" {{ $reserva->payment_status === 'paid' ? 'selected' : '' }}>Dibayar</option>
+                    <option value="paid" {{ $reserva->payment_status === 'paid' ? 'selected' : '' }}>Ada Kuitansi</option>
                     <option value="pending" {{ $reserva->payment_status === 'pending' ? 'selected' : '' }}>Pending</option>
                     <option value="refunded" {{ $reserva->payment_status === 'refunded' ? 'selected' : '' }}>Refund
                     </option>

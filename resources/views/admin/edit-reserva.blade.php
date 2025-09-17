@@ -84,15 +84,15 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Metode Pembayaran</label>
+            <label class="form-label">Metode Reservasi</label>
             <input type="text" class="form-control" value="{{ ucfirst($reserva->payment_method) }}" disabled>
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Status Pembayaran</label>
+            <label class="form-label">Status Reservasi</label>
             <select name="payment_status" class="form-select">
                 <option value="pending" {{ $reserva->payment_status === 'pending' ? 'selected' : '' }}>Pending</option>
-                <option value="paid" {{ $reserva->payment_status === 'paid' ? 'selected' : '' }}>Dibayar</option>
+                <option value="paid" {{ $reserva->payment_status === 'paid' ? 'selected' : '' }}>Ada Kuitansi</option>
                 <option value="refunded" {{ $reserva->payment_status === 'refunded' ? 'selected' : '' }}>Dikembalikan</option>
             </select>
         </div>

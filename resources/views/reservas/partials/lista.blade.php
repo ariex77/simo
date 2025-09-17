@@ -23,7 +23,7 @@
 
                                     <p class="mb-1"><strong>Status:</strong>
                                         @if ($reserva->payment_status === 'paid')
-                                            <span class="badge bg-success">Dibayar</span>
+                                            <span class="badge bg-success">Ada Kuitansi</span>
                                         @elseif($reserva->payment_status === 'pending')
                                             <span class="badge bg-warning text-dark">Pending</span>
                                         @elseif($reserva->payment_status === 'refunded')
@@ -73,7 +73,7 @@
                                     @endphp
 
                                     <p class="mb-1">
-                                        <strong>Jumlah yang dibayar:</strong> Rp.{{ number_format($total, 2, ',', '.') }}
+                                        <strong>Total BBM:</strong> Rp.{{ number_format($total, 2, ',', '.') }}
                                         ({{ $days }} Hari × Rp.{{ number_format($carro->preco_diario, 2, ',', '.') }})
                                     </p>
 

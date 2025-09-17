@@ -155,8 +155,8 @@
                     <label for="payment_method" class="form-label">Metode Pembayaran</label>
                     <select id="payment_method" name="payment_method" class="form-select" required onchange="togglePaymentMethod(this.value); updatePaymentSummary();">
                         <option value="">Pilih metode</option>
-                        <option value="paypal">PayPal</option>
-                        <option value="referencia">Referensi multibank</option>
+                        
+                        <option value="referencia">Bukti pembelian BBM</option>
                     </select>
                 </div>
 
@@ -307,7 +307,7 @@
         }
 
         paymentSummary.innerHTML = `
-            <h5 class="mb-2">Ringkasan Pembayaran</h5>
+            <h5 class="mb-2">Ringkasan Pembelian BBM</h5>
             <ul class="list-unstyled mb-2">
                 <li><strong>Hari:</strong> Rp.{Hari}</li>
                 <li><strong>BBM Harian:</strong> Rp.${dailyRate.toFixed(2)}</li>

@@ -45,7 +45,7 @@ public function store(Request $request)
     }
 
 
-    return back()->with('success', 'Reservasi berhasil dibuat! Gunakan referensi untuk membayar.');
+    return back()->with('success', 'Reservasi berhasil dibuat! tunjukkan bukti pembelian BBM.');
 }
 
 

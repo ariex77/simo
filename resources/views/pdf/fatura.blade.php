@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="header">
-        <h2>SIMO_Dinkes - Invoice Reservation</h2>
+        <h2>SIMO_Dinkes - Invoice Reservasi</h2>
         <p><strong>Reservasi ID:</strong> #{{ $reserva->id }}</p>
     </div>
 
