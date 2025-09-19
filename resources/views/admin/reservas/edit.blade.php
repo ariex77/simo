@@ -33,7 +33,7 @@
             <div class="mb-3">
                 <label class="form-label">Metode Reservasi</label>
                 <select name="payment_method" class="form-select" required disabled>
-                    <option value="paypal" {{ $reserva->payment_method === 'paypal' ? 'selected' : '' }}>PayPal</option>
+                    
                     <option value="atm" {{ $reserva->payment_method === 'atm' ? 'selected' : '' }}>Kuitansi BBM</option>
                 </select>
             </div>
@@ -41,7 +41,7 @@
             <div class="mb-3">
                 <label class="form-label">Status Reservasi</label>
                 <select name="payment_status" class="form-select" required>
-                    <option value="paid" {{ $reserva->payment_status === 'paid' ? 'selected' : '' }}>Ada Kuitansi</option>
+                    <option value="paid" {{ $reserva->payment_status === 'paid' ? 'selected' : '' }}>Lunas</option>
                     <option value="pending" {{ $reserva->payment_status === 'pending' ? 'selected' : '' }}>Pending</option>
                     <option value="refunded" {{ $reserva->payment_status === 'refunded' ? 'selected' : '' }}>Refund
                     </option>
@@ -55,8 +55,7 @@
             <form method="POST" action="{{ route('admin.reservas.refund', $reserva->id) }}" class="mt-3">
                 @csrf
                 <button class="btn" style="background-color:gold; color:black;"
-                    onclick="return confirm('Tem certeza que deseja reembolsar esta reserva?')">Pengembalian Dana
-Pembayaran</button>
+                    onclick="return confirm('Tem certeza que deseja reembolsar esta reserva?')">Refund</button>
             </form>
         @endif
     </div>

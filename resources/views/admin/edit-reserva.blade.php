@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Reservasi - SIMO_Dinkes Admin</title>
+    <title>Edit Reservasi - SIMO Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background-color: #f8f9fa; }
@@ -16,7 +16,7 @@
 
 {{-- 🔝 Top Navigation --}}
 <nav class="top-nav d-flex justify-content-between align-items-center">
-    <span class="fw-bold fs-4">SIMO_Dinkes - Admin</span>
+    <span class="fw-bold fs-4">SIMO - Admin</span>
     <div>
         <a href="{{ route('admin.dashboard') }}">Panel Admin</a>
         <a href="{{ route('logout') }}"
@@ -30,11 +30,11 @@
 @if($reserva)
     @if($reserva->payment_status === 'pending')
         <div class="alert alert-warning text-center">
-            Reservasi #{{ $reserva->id }} sedang menunggu pembayaran.
+            Reservasi #{{ $reserva->id }} sedang menunggu kuitansi BBM.
         </div>
     @elseif($reserva->payment_status === 'paid')
         <div class="alert alert-success text-center">
-            Reservasi #{{ $reserva->id }} berhasil dibayar.
+            Reservasi #{{ $reserva->id }} berhasil.
         </div>
     @elseif($reserva->payment_status === 'refunded')
         <div class="alert alert-danger text-center">

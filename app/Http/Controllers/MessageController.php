@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
+
     public function index()
     {
         $user = Auth::user();
@@ -31,7 +32,7 @@ return view('messages.index', compact('messages'));
         'is_admin' => false,
     ]);
 
-    return redirect()->route('messages.index')->with('success', 'Mensagem enviada com sucesso.');
+    return redirect()->route('messages.index')->with('success', 'Pesan berhasil terkirim.');
 }
 
     public function send(Request $request)

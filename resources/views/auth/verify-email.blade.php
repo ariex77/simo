@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Verificação de Email - SuperCarRent</title>
+    <title>Verifikasi Email - SIMO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -28,22 +28,22 @@
 
     <div class="container">
         <div class="verify-container">
-            <h2 class="brand-title">SuperCarRent</h2>
-            <h5>Verifique o seu endereço de email</h5>
+            <h2 class="brand-title">SIMO</h2>
+            <h5>Verifikasi alamat email Anda</h5>
             <p class="text-muted mt-3">
-                Enviámos um link de verificação para o seu email. Por favor, verifique a sua caixa de entrada antes de entrar.
+                Kami telah mengirimkan tautan verifikasi ke email Anda. Harap periksa kotak masuk Anda.
             </p>
 
             @if (session('status') === 'verification-link-sent')
                 <div class="alert alert-success">
-                    Um novo link de verificação foi enviado para o seu email.
+                    Tautan verifikasi baru telah dikirim ke email Anda.
                 </div>
             @endif
 
             <form method="POST" action="{{ route('verification.send') }}" class="d-grid gap-2 mt-4">
                 @csrf
                 <button type="submit" class="btn btn-outline-primary w-100">
-                    Reenviar Email de Verificação
+                    Kirim Ulang Email Verifikasi
                 </button>
             </form>
 
@@ -51,7 +51,7 @@
                 <form method="POST" action="{{ route('logout') }}">
     @csrf
     <button type="submit" class="btn btn-outline-secondary w-100 mt-3">
-        Ir para o login
+        Masuk
     </button>
 </form>
 

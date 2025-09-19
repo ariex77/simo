@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>User Profile - SIMO_Dinkes</title>
+    <title>User Profile - SIMO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -52,7 +52,7 @@
 
 <div class="container py-5">
     <div class="profile-card bg-white shadow p-4 rounded">
-        <h2 class="mb-4 text-center">Edit Profile</h2>
+        <h2 class="mb-4 text-center">Edit Profil</h2>
 
         @if(session('status') === 'profile-updated')
             <div class="alert alert-success text-center">Profil berhasil diperbarui!</div>
@@ -91,33 +91,33 @@
         <hr class="my-4">
 
         {{-- 🔐 Change Password --}}
-        <h5 class="mb-3">Ubah Password</h5>
+        <h5 class="mb-3">Ubah Kata Sandi</h5>
         <form method="POST" action="{{ route('password.update') }}">
     @csrf
     @method('PUT')
     @if(session('status') === 'password-updated')
-    <div class="alert alert-success">Senha alterada com sucesso!</div>
+    <div class="alert alert-success">Kata sandi berhasil diubah!</div>
 @endif
 
 
 
             <div class="mb-3">
-                <label class="form-label">Password Saat Ini</label>
+                <label class="form-label">Kata Sandi Saat Ini</label>
                 <input type="password" name="current_password" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Password Baru</label>
+                <label class="form-label">Kata Sandi Baru</label>
                 <input type="password" name="password" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Konfirmasi Password Baru</label>
+                <label class="form-label">Konfirmasi Kata Sandi Baru</label>
                 <input type="password" name="password_confirmation" class="form-control" required>
             </div>
 
             <div class="text-center">
-                <button class="btn btn-warning **btn-sm**">Perbarui Password</button>
+                <button class="btn btn-warning **btn-sm**">Perbarui Kata Sandi</button>
             </div>
         </form>
 
@@ -127,7 +127,7 @@
         <form method="POST" action="{{ route('profile.destroy') }}" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?')">
             @csrf
             @method('DELETE')
-            <label class="form-label">Password untuk mengonfirmasi penghapusan</label>
+            <label class="form-label">Kata sandi untuk mengonfirmasi penghapusan</label>
             <input type="password" name="password" class="form-control mb-3" required>
 
             <div class="text-center">
@@ -138,7 +138,7 @@
 </div>
 
 <footer class="text-center py-4 bg-dark text-white mt-5">
-    &copy; {{ date('Y') }} Dinkes Kampar. All rights reserved.
+    &copy; {{ date('Y') }} SIMO. All rights reserved.
 </footer>
 
 </body>

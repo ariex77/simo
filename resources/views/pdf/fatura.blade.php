@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Invoice - Reservation #{{ $reserva->id }}</title>
+    <title>Invoice - Reservasi #{{ $reserva->id }}</title>
     <style>
         body { font-family: Arial, sans-serif; font-size: 14px; }
         .header { text-align: center; margin-bottom: 30px; }
@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="header">
-        <h2>SIMO_Dinkes - Invoice Reservasi</h2>
+        <h2>SIMO - Invoice Reservasi</h2>
         <p><strong>Reservasi ID:</strong> #{{ $reserva->id }}</p>
     </div>
 

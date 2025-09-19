@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>SIMO_Dinkes - Login</title>
+    <title>SIMO - Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         html, body {
@@ -66,7 +66,7 @@
 
     <div class="login-container">
         <div class="login-card">
-            <h2>Masuk SIMO_Dinkes</h2>
+            <h2>Masuk Aplikasi</h2>
 
             {{-- Display Validation Errors --}}
             @if ($errors->any())

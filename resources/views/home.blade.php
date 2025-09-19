@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>SIMO_Dinkes - Welcome</title>
+    <title>SIMO - Welcome</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .hero {
@@ -52,7 +52,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-4">
-                    <h4>1 Lokasi</h4>
+                    <h4>Operasional Kendaraan</h4>
                     <p>Menjangkau 21 Kecamatan</p>
                 </div>
                 <div class="col-md-4">

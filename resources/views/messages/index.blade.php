@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Pedir Ajuda - SuperCarRent</title>
+    <title>Ask for Help - SIMO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
     body {
@@ -81,17 +81,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
     <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name') }}</a>
     <div class="ms-auto">
-        <a href="{{ route('home') }}" class="text-white me-3">Início</a>
-        <a href="{{ route('reservas.minhas') }}" class="text-white me-3">Gerir Reservas</a>
-        <a href="{{ route('profile.edit') }}" class="text-white me-3">Olá, {{ Auth::user()->name }}</a>
+        <a href="{{ route('home') }}" class="text-white me-3">Home</a>
+        <a href="{{ route('reservas.minhas') }}" class="text-white me-3">Kelola Reservasi</a>
+        <a href="{{ route('profile.edit') }}" class="text-white me-3">Halo, {{ Auth::user()->name }}</a>
         <a href="{{ route('logout') }}" class="text-white"
-           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</a>
+           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
     </div>
 </nav>
 
 <div class="container py-5">
-    <h3 class="text-center mb-4">Pedir Ajuda</h3>
+    <h3 class="text-center mb-4">Bantuan</h3>
 
     @if (session('success'))
         <div class="alert alert-success text-center">{{ session('success') }}</div>
@@ -104,19 +104,19 @@
     <div class="chat-box">
         @forelse ($messages as $msg)
             <div class="{{ $msg->is_admin ? 'message-admin' : 'message-user' }}">
-                <div><strong>{{ $msg->is_admin ? 'Admin' : 'Você' }}:</strong> {{ $msg->message }}</div>
+                <div><strong>{{ $msg->is_admin ? 'Admin' : 'User' }}:</strong> {{ $msg->message }}</div>
                 <small>{{ $msg->created_at->format('d/m/Y H:i') }}</small>
             </div>
         @empty
-            <p class="text-muted text-center">Nenhuma mensagem até o momento.</p>
+            <p class="text-muted text-center">Belum ada pesan.</p>
         @endforelse
     </div>
 
     <form method="POST" action="{{ route('messages.store') }}">
         @csrf
         <div class="input-group">
-            <input type="text" name="message" class="form-control" placeholder="Digite sua mensagem..." required>
-            <button class="btn btn-primary" type="submit">Enviar</button>
+            <input type="text" name="message" class="form-control" placeholder="Ketik pesan Anda..." required>
+            <button class="btn btn-primary" type="submit">Kirim</button>
         </div>
     </form>
 </div>

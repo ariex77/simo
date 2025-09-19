@@ -25,6 +25,6 @@ class ReservationConfirmationMailController extends Controller
             ->send(new ReservationConfirmationMail($clientName, $local));
 
         //retorna a página anterior (back) com a mensagem
-        return back()->with('success', 'E-mail enviado com sucesso!');
+        return back()->with('success', 'Email berhasil terkirim!');
     }
 }

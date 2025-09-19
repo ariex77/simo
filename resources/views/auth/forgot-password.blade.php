@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Recuperar Senha - SuperCarRent</title>
+    <title>Pulihkan Kata Sandi - SIMO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -26,7 +26,7 @@
 
     <div class="container">
         <div class="form-container">
-            <h4 class="text-center mb-4">Recuperar password</h4>
+            <h4 class="text-center mb-4">Pulihkan kata sandi</h4>
 
             @if (session('status'))
                 <div class="alert alert-success text-center">
@@ -38,20 +38,20 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Endereço de Email</label>
+                    <label for="email" class="form-label">Alamat Email</label>
                     <input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}" required autofocus>
                     @error('email')
                         <div class="text-danger mt-1">{{ $message }}</div>
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-warning w-100">Recuperar password</button>
+                <button type="submit" class="btn btn-warning w-100">Pulihkan kata sandi</button>
 
 
             </form>
 
             <div class="mt-3 text-center">
-                <a href="{{ route('login') }}">Voltar para o login</a>
+                <a href="{{ route('login') }}">Back to login</a>
             </div>
         </div>
     </div>

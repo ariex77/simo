@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Registo - SuperCarRent</title>
+    <title>Registrasi - SIMO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -28,8 +28,8 @@
 
     <div class="container">
         <div class="form-container">
-            <h2 class="brand-title">SuperCarRent</h2>
-            <h5 class="text-center mb-4">Criar Conta</h5>
+            <h2 class="brand-title">SIMO</h2>
+            <h5 class="text-center mb-4">Buat Akun</h5>
 
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -45,7 +45,7 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label for="name" class="form-label">Nome</label>
+                    <label for="name" class="form-label">Nama</label>
                     <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                 </div>
 
@@ -55,19 +55,19 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" class="form-label">Palavra-passe</label>
+                    <label for="password" class="form-label">Password</label>
                     <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password">
                 </div>
 
                 <div class="mb-3">
-                    <label for="password_confirmation" class="form-label">Confirmar Palavra-passe</label>
+                    <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
                     <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required>
                 </div>
 
-                <button type="submit" class="btn btn-warning w-100">Registar</button>
+                <button type="submit" class="btn btn-warning w-100">Registrasi</button>
 
                 <div class="mt-3 text-center">
-                    Já tem conta? <a href="{{ route('login') }}">Entrar</a>
+                    Sudah Punya Akun? <a href="{{ route('login') }}">Masuk</a>
                 </div>
             </form>
         </div>

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Administration Panel - SIMO_Dinkes</title>
+    <title>Administration Panel - SIMO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
@@ -116,7 +116,7 @@
 <body>
 
     <nav class="top-nav d-flex justify-content-between align-items-center px-3">
-        <span class="fw-bold fs-4">SIMO_Dinkes - Admin</span>
+        <span class="fw-bold fs-4">SIMO - Admin</span>
         <div>
             <a href="{{ route('home') }}">Home</a>
             <a href="{{ route('logout') }}"
