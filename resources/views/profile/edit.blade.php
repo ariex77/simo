@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>User Profile - SIMO</title>
+    <title>User Profil - SIMO</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -64,7 +64,7 @@
 
             {{-- Profile Image --}}
             <div class="text-center mb-4">
-                <img src="{{ Auth::user()->profile_photo_url }}" class="profile-photo mb-3" alt="Foto de Perfil">
+                <img src="{{ Auth::user()->profile_photo_url ?? asset('images/default-avatar.png') }}" class="profile-photo mb-3" alt="Foto Profil">
                 <input type="file" name="profile_photo" class="form-control w-50 mx-auto">
             </div>
 
@@ -84,7 +84,7 @@
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn btn-primary **btn-sm**">Simpan Perubahan</button>
+                <button type="submit" class="btn btn-primary btn-sm">Simpan Perubahan</button>
             </div>
         </form>
 
@@ -117,7 +117,7 @@
             </div>
 
             <div class="text-center">
-                <button class="btn btn-warning **btn-sm**">Perbarui Kata Sandi</button>
+                <button class="btn btn-warning btn-sm">Perbarui Kata Sandi</button>
             </div>
         </form>
 
@@ -131,7 +131,7 @@
             <input type="password" name="password" class="form-control mb-3" required>
 
             <div class="text-center">
-                <button class="btn btn-danger **btn-sm**">Hapus Akun</button>
+                <button class="btn btn-danger btn-sm">Hapus Akun</button>
             </div>
         </form>
     </div>

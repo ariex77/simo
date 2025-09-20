@@ -92,8 +92,8 @@
             <label class="form-label">Status Reservasi</label>
             <select name="payment_status" class="form-select">
                 <option value="pending" {{ $reserva->payment_status === 'pending' ? 'selected' : '' }}>Pending</option>
-                <option value="paid" {{ $reserva->payment_status === 'paid' ? 'selected' : '' }}>Ada Kuitansi</option>
-                <option value="refunded" {{ $reserva->payment_status === 'refunded' ? 'selected' : '' }}>Dikembalikan</option>
+                <option value="paid" {{ $reserva->payment_status === 'paid' ? 'selected' : '' }}>Lunas</option>
+                <option value="refunded" {{ $reserva->payment_status === 'refunded' ? 'selected' : '' }}>Refund</option>
             </select>
         </div>
 

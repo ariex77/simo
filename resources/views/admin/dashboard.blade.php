@@ -209,7 +209,7 @@
                                                     @if ($r->payment_status === 'paid')
                                                         <form action="{{ route('admin.reservas.refund', $r->id) }}"
                                                             method="POST" style="display:inline-block;"
-                                                            onsubmit="return confirm('Tem certeza que deseja reembolsar esta reserva?');">
+                                                            onsubmit="return confirm('Apakah Anda yakin ingin mengembalikan dana reservasi ini?');">
                                                             @csrf
                                                             <button type="submit"
                                                                 class="btn btn-danger btn-sm">Refund</button>
@@ -269,7 +269,7 @@
                                     <input type="text" id="msg-input-{{ $chatUser->id }}"
                                            class="form-control me-2"
                                            placeholder="Responder..." required>
-                                    <button type="submit" class="btn btn-success">Untuk mengirim</button>
+                                    <button type="submit" class="btn btn-success">Kirim</button>
                                 </form>
 
                             </div>
@@ -345,10 +345,10 @@
         input.value = '';
         fetchMessages(userId);
     } else {
-        alert('Erro ao enviar mensagem.');
+        alert('Terjadi kesalahan saat mengirim pesan.');
     }
 })
-.catch(() => alert('Erro ao enviar mensagem.'));
+.catch(() => alert('Terjadi kesalahan saat mengirim pesan.'));
 
         }
 

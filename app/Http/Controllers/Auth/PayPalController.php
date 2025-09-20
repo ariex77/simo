@@ -57,14 +57,14 @@ class PayPalController extends Controller
 
             return redirect()->away($payment->getApprovalLink());
         } catch (\Exception $ex) {
-            return redirect()->back()->with('error', 'Erro ao redirecionar para o PayPal.');
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat mengalihkan ke PayPal.');
         }
     }
 
     public function paymentStatus(Request $request)
     {
         if (empty($request->input('PayerID')) || empty($request->input('token'))) {
-            return redirect()->route('reservas.minhas')->with('error', 'Pagamento cancelado.');
+            return redirect()->route('reservas.minhas')->with('error', 'Pembayaran dibatalkan.');
         }
 
         $payment = Payment::get($request->paymentId, $this->apiContext);
@@ -81,14 +81,14 @@ class PayPalController extends Controller
                 $reserva->save();
             }
 
-            return redirect()->route('reservas.minhas')->with('success', 'Pagamento confirmado com sucesso!');
+            return redirect()->route('reservas.minhas')->with('success', 'Pembayaran berhasil dikonfirmasi!');
         } catch (\Exception $ex) {
-            return redirect()->route('reservas.minhas')->with('error', 'Erro ao confirmar o pagamento.');
+            return redirect()->route('reservas.minhas')->with('error', 'Kesalahan saat mengonfirmasi pembayaran.');
         }
     }
 
     public function paymentCancel()
     {
-        return redirect()->route('reservas.minhas')->with('error', 'Pagamento cancelado pelo utilizador.');
+        return redirect()->route('reservas.minhas')->with('error', 'Pembayaran dibatalkan oleh pengguna.');
     }
 }
