@@ -23,7 +23,7 @@
 
                                     <p class="mb-1"><strong>Status:</strong>
                                         @if ($reserva->payment_status === 'paid')
-                                            <span class="badge bg-success">Lunas</span>
+                                            <span class="badge bg-success">Approved</span>
                                         @elseif($reserva->payment_status === 'pending')
                                             <span class="badge bg-warning text-dark">Pending</span>
                                         @elseif($reserva->payment_status === 'refunded')
