@@ -169,7 +169,7 @@
                                         <th>Mobil</th>
                                         <th>Awal</th>
                                         <th>Akhir</th>
-                                        <th>BBM Total</th>
+                                        <th>Referensi</th>
                                         <th>Metode</th>
                                         <th>Status</th>
                                         <th>Tanggal</th>
@@ -185,7 +185,7 @@
                                             </td>
                                             <td>{{ \Carbon\Carbon::parse($r->data_inicio)->format('d/m/Y') }}</td>
                                             <td>{{ \Carbon\Carbon::parse($r->data_fim)->format('d/m/Y') }}</td>
-                                            <td>Rp.{{ number_format($r->preco_total, 2, ',', '.') }}</td>
+                                           <td>{{ $r->referencia }}</td>
                                             <td><span
                                                     class="badge bg-secondary status-badge">{{ ucfirst($r->payment_method) }}</span>
                                             </td>
